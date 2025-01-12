@@ -1,7 +1,10 @@
 #!/bin/bash
-set -e -u -x
-set -o pipefail
+set -e -u -x -o pipefail
+export DEBIAN_FRONTEND=noninteractive
 apt-get update
+
+# Setup NSD
+dpkg --configure -a
 apt-get install -y git net-tools nsd
 # Not sure if to go with default or all non loopback addresses
 default_if=$(ip route | awk '$1=="default"{print $NF}')
@@ -16,3 +19,7 @@ done) > /etc/nsd/nsd.conf.d/ip.conf
 # Clone the zonefile repo
 # Loop through zonefile repo adding zones with nsd-control addzone
 systemctl restart nsd
+
+apt-get install -y unbound
+
+apt-get install -y opensmtpd-extras
