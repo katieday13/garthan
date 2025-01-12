@@ -23,3 +23,10 @@ systemctl restart nsd
 apt-get install -y unbound
 
 apt-get install -y opensmtpd-extras
+# Kludgery to get opensmtpd to look in /etc/opensmtpd/opensmtpd.conf.d/*.conf if possible
+# Config overrides... in the conf.d if appropriate... otherwise rewrite file with any generated details
+# Although 'maildir ~/Maildir ~/Maildir/Junk' may be sufficient
+# Unclear on adding opensmtpd-filter-dkimsign, opensmtpd-filter rspamd, opensmtpd-filter-senderscore
+
+apt-get install -y dovecot-imapd dovecot-sqlite dovecot-managesieved dovecot-solr dovecot-submissiond
+# And kludgery to configure
