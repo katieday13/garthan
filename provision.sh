@@ -30,3 +30,6 @@ apt-get install -y opensmtpd-extras
 
 apt-get install -y dovecot-imapd dovecot-sqlite dovecot-managesieved dovecot-solr dovecot-submissiond
 # And kludgery to configure
+# dovecot-fts-xapian may be better idea than solr
+
+apt-get install -y inspircd atheme-services-contrib
