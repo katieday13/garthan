@@ -39,6 +39,9 @@ apt-get install -y apache2-bin apache2-utils
 # Probably missing the page rewrite stuff
 # And missing something to fetch the webfiles from something like github
 
-apt-get install -y ufw fail2ban logwatch fwlogwatch auditd aide rkhunter
+apt-get install -y ufw fail2ban logwatch fwlogwatch auditd aide rkhunter fwknop-server fwknop-client
 # From https://www.cyberciti.biz/tips/linux-security.html
 # Also consider https://manpages.debian.org/unstable/crypto-policies/fips-mode-setup.8.en.html
+
+# This is also where I'd start poking at fwknop-server to reduce outside visibility
+# And using wireguard to further protect sshd
