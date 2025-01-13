@@ -33,3 +33,12 @@ apt-get install -y dovecot-imapd dovecot-sqlite dovecot-managesieved dovecot-sol
 # dovecot-fts-xapian may be better idea than solr
 
 apt-get install -y inspircd atheme-services-contrib
+# Yep needs config for inspircd and atheme
+
+apt-get install -y apache2-bin apache2-utils
+# Probably missing the page rewrite stuff
+# And missing something to fetch the webfiles from something like github
+
+apt-get install -y ufw fail2ban logwatch fwlogwatch auditd aide rkhunter
+# From https://www.cyberciti.biz/tips/linux-security.html
+# Also consider https://manpages.debian.org/unstable/crypto-policies/fips-mode-setup.8.en.html
